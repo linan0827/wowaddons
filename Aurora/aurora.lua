@@ -38,7 +38,7 @@ C.media = {
 	["backdrop"] = Qulight["media"].texture,
 	["glow"] = Qulight["media"].glow,
 	["checked"] = "Interface\\AddOns\\Aurora\\media\\CheckButtonHilight",
-	["font"] = [=[Interface\Addons\QulightUI\Root\Media\qFont.ttf]=],
+	["font"] = [=[Interface\Addons\QulightUI\Root\Media\msyf.ttf]=],
 	["gradient"] = "Interface\\AddOns\\Aurora\\media\\gradient",
 	["roleIcons"] = "Interface\\Addons\\Aurora\\media\\UI-LFG-ICON-ROLES",
 }
