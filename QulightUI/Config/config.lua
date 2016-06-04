@@ -1,10 +1,10 @@
 ﻿Qulight["media"] = {
-	["font"] = [=[Interface\Addons\QulightUI\Root\Media\qFont.ttf]=], 			        -- main font in Qulight UI
-	["pxfont"] = [=[Interface\Addons\QulightUI\Root\Media\pxFont.ttf]=],
+	["font"] = [=[Interface\Addons\QulightUI\Root\Media\msyh.ttf]=], 			        -- main font in Qulight UI
+	["pxfont"] = [=[Interface\Addons\QulightUI\Root\Media\msyh.ttf]=],
 	["fontsize"] = 10, 														    		-- size of font 
 	["texture"] = "Interface\\AddOns\\QulightUI\\Root\\Media\\statusbar4",				-- main texture in Qulight UI
 	["blank"] = "Interface\\Buttons\\WHITE8x8",											-- clean texture
-	["glow"] = "Interface\\AddOns\\QulightUI\\Root\\Media\\glowTex",	
+	["glow"] = "Interface\\AddOns\\QulightUI\\Root\\Media\\glowTex",
 }
 Qulight["general"] = {
 	["AutoScale"] = true,  																-- mainly enabled for users that don't want to mess with the config file
