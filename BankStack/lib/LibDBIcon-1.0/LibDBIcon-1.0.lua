@@ -138,13 +138,19 @@ do
 			y = math.max(-80, math.min(y*diagRadius, 80))
 		end
 		]]
-		local x, y
+		local x, y, obj_totest
 		if button.db then
-			x = button.db.minimapPos.x
-			y = button.db.minimapPos.y
+			obj_totest = button.db.minimapPos
 		else
-			x = button.minimapPos.x
-			y = button.minimapPos.y
+			obj_totest = button.minimapPos
+		end
+		
+		if obj_totest then
+			x = obj_totest.x
+			y = obj_totest.y
+		else
+			x = 1445
+			y = 173
 		end
 		x = math.min(1445, x)
 		y = math.max(173, y)
