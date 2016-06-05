@@ -2,7 +2,7 @@ if not Qulight["buffdebuff"].enable or not Qulight["unitframes"].enable == true 
 local addon, ns = ...
 
 AnchorBuff = CreateFrame("Frame","Move_Buff",UIParent)
-AnchorBuff:SetPoint("TOPRIGHT", UIParent, -150, -5)
+AnchorBuff:SetPoint("BOTTOMRIGHT", UIParent, -455, 3)
 CreateAnchor(AnchorBuff, "Move Buff", 300, 70)
 
 local mainhand, _, _, offhand, _, _, hand3 = GetWeaponEnchantInfo()
@@ -112,7 +112,7 @@ end
 
 local function UpdateBuffAnchors()
 	local buttonName = "BuffButton"
-	local buff, previousBuff, aboveBuff
+	local buff, previousBuff, aboveBuff, belowBuff
 	local numBuffs = 0
 	local slack = BuffFrame.numEnchants
 	local mainhand, _, _, offhand, _, _, hand3 = GetWeaponEnchantInfo()
@@ -125,15 +125,19 @@ local function UpdateBuffAnchors()
 			numBuffs = numBuffs + 1
 			index = numBuffs + slack
 			buff:ClearAllPoints()
-			if ( (index > 1) and (mod(index, Qulight["buffdebuff"].BUFFS_PER_ROW) == 1) ) then
- 				if ( index == Qulight["buffdebuff"].BUFFS_PER_ROW + 1 ) then
-					buff:SetPoint("TOP", ConsolidatedBuffs, "BOTTOM", 0, -3)
+			if ((index > 1) and (mod(index, Qulight["buffdebuff"].BUFFS_PER_ROW) == 1)) then
+ 				--[[if ( index == Qulight["buffdebuff"].BUFFS_PER_ROW + 1 ) then
+					buff:SetPoint("BOTTOM", ConsolidatedBuffs, "BOTTOM", 0, 3)
 				else
-					buff:SetPoint("TOP", aboveBuff, "BOTTOM", 0, -3)
+					buff:SetPoint("BOTTOM", belowBuff, "TOP", 0, 3)
 				end
-				aboveBuff = buff
+				]]
+			--	aboveBuff = buff
+				buff:SetPoint("BOTTOM", belowBuff, "TOP", 0, 3)
+				belowBuff = buff
 			elseif index == 1 then
-				buff:SetPoint("TOPRIGHT", AnchorBuff)
+				buff:SetPoint("BOTTOMRIGHT", AnchorBuff)
+				belowBuff = buff
 			else
 				if numBuffs == 1 then
 					if (mainhand and offhand and hand3) and not UnitHasVehicleUI("player") then

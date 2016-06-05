@@ -103,12 +103,12 @@ Qulight["chatt"] = {
 }
 Qulight["buffdebuff"] = {
 	["enable"] = true,  
-	["iconsize"] = 35, 																	-- buffs size
+	["iconsize"] = 24, 																	-- buffs size
 	["timefontsize"] = 10, 																-- time font size
 	["countfontsize"] = 10,  															-- count font size
-	["spacing"] = 3, 																	-- spacing between icons(buffs)
+	["spacing"] = 1, 																	-- spacing between icons(buffs)
 	["timeYoffset"] = -2, 																-- verticall offset value for time text field
-	["BUFFS_PER_ROW"] = 15,
+	["BUFFS_PER_ROW"] = 5,
 }
 Qulight["addonskins"] = {
 	["DBM"] = true, 																	-- Deadly Boss Mod skinning
