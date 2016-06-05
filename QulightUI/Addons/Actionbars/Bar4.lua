@@ -19,7 +19,7 @@ for i= 1, 12 do
 	b:SetFrameLevel(15)
 	
 	if i == 1 then
-		b:SetPoint("TOPLEFT", bar, buttonspacing,-buttonspacing)
+		b:SetPoint("TOPLEFT", bar, "TOPLEFT", buttonspacing,0)
 	else
 		b:SetPoint("LEFT", b2, "RIGHT", buttonspacing, 0)
 	end

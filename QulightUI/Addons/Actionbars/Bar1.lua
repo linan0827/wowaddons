@@ -79,7 +79,7 @@ bar:SetScript("OnEvent", function(self, event, unit, ...)
 			button:SetFrameStrata("BACKGROUND")
 			button:SetFrameLevel(15)
 			if i == 1 then
-				button:SetPoint("BOTTOMLEFT", buttonspacing, -buttonspacing)
+				button:SetPoint("BOTTOMLEFT", buttonspacing, 0)
 			elseif i == (Qulight.actionbar.mainbarWidth+1) then
 				button:SetPoint("TOP", UIParent, "BOTTOM", 0, -20)
 			else
