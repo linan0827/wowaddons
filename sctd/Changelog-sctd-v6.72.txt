@@ -1,0 +1,15 @@
+------------------------------------------------------------------------
+r39 | grayhoof | 2015-06-24 02:45:38 +0000 (Wed, 24 Jun 2015) | 1 line
+Changed paths:
+   A /tags/v6.72 (from /trunk:38)
+
+Tagging as v6.72
+------------------------------------------------------------------------
+r38 | grayhoof | 2015-06-24 02:43:51 +0000 (Wed, 24 Jun 2015) | 1 line
+Changed paths:
+   M /trunk/sctd.toc
+   M /trunk/sctd_options/locals/localization.kr.lua
+   M /trunk/sctd_options/sctd_options.toc
+
+sctd: TOC update for 6.2. Localization updated.
+------------------------------------------------------------------------
