@@ -153,11 +153,12 @@ if Qulight["actionbar"].enable then
 	QuBar7:SetAlpha(0)
 
 	Anchorpetbg = CreateFrame("Frame","Move_petbar",UIParent)
-		if Qulight["general"].centerpanel then
-			Anchorpetbg:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 113, 193)
-		else
-			Anchorpetbg:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 113, 177)
-		end
+--		if Qulight["general"].centerpanel then
+--			Anchorpetbg:SetPoint("BOTTOMLEFT", UIParent, "BOTTOM", 0, 193)
+--		else
+--			Anchorpetbg:SetPoint("BOTTOMLEFT", UIParent, "BOTTOM", 0, 177)
+--		end
+	Anchorpetbg:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, first_bar_altitude + 5*bar_alt_space)
 	CreateAnchor(Anchorpetbg, "Move petbar", (petbuttonsize * 10) + (petbuttonspacing * 11), petbuttonsize)
 	
 	local petbg = CreateFrame("Frame", "QuPetBar", UIParent, "SecureHandlerStateTemplate")
