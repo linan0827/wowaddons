@@ -20,7 +20,7 @@ local GetFormattedTime = function(s)
 end
 
 ConsolidatedBuffs:ClearAllPoints()
-ConsolidatedBuffs:SetPoint("TOPRIGHT", AnchorBuff)
+ConsolidatedBuffs:SetPoint("TOPRIGHT", AnchorBuff, 0, Qulight["buffdebuff"].iconsize)
 ConsolidatedBuffs:SetSize(Qulight["buffdebuff"].iconsize, Qulight["buffdebuff"].iconsize)
 ConsolidatedBuffs.SetPoint = nil
 
@@ -123,7 +123,7 @@ local function UpdateBuffAnchors()
 		
 		if not buff.consolidated then	
 			numBuffs = numBuffs + 1
-			index = numBuffs + slack
+			--index = numBuffs
 			buff:ClearAllPoints()
 			if ((index > 1) and (mod(index, Qulight["buffdebuff"].BUFFS_PER_ROW) == 1)) then
  				--[[if ( index == Qulight["buffdebuff"].BUFFS_PER_ROW + 1 ) then
@@ -140,15 +140,17 @@ local function UpdateBuffAnchors()
 				belowBuff = buff
 			else
 				if numBuffs == 1 then
-					if (mainhand and offhand and hand3) and not UnitHasVehicleUI("player") then
+			--[[		if (mainhand and offhand and hand3) and not UnitHasVehicleUI("player") then
 						buff:SetPoint("RIGHT", TempEnchant3, "LEFT", -3, 0)
 					elseif ((mainhand and offhand) or (mainhand and hand3) or (offhand and hand3)) and not UnitHasVehicleUI("player") then
 						buff:SetPoint("RIGHT", TempEnchant2, "LEFT", -3, 0)
 					elseif ((mainhand and not offhand and not hand3) or (offhand and not mainhand and not hand3) or (hand3 and not mainhand and not offhand)) and not UnitHasVehicleUI("player") then
 						buff:SetPoint("RIGHT", TempEnchant1, "LEFT", -3, 0)
 					else
-						buff:SetPoint("RIGHT", ConsolidatedBuffs, "LEFT", -3, 0)
-					end
+				]]
+						buff:SetPoint("BOTTOMRIGHT", AnchorBuff)
+						belowBuff = buff
+					--end
 				else
 					buff:SetPoint("RIGHT", previousBuff, "LEFT", -3, 0)
 				end
