@@ -47,7 +47,7 @@ C.defaults = {
 	["acknowledgedSplashScreen"] = false,
 
 	["alpha"] = 0.9,
-	["bags"] = false,
+	["bags"] = true,
 	["buttonGradientColour"] = {0, 0, 0, .3},
 	["buttonSolidColour"] = {.35, .35, .35, .35},
 	["useButtonGradientColour"] = true,
