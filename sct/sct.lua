@@ -278,7 +278,7 @@ function SCT:OnInitialize()
 
   --Shared Media
   for key, value in pairs(SCT.LOCALS.FONTS) do
-    media:Register("font", value.name, value.path)
+    media:Register("font", value.name, value.path, value.locale)
   end
 
   --register with other mods
