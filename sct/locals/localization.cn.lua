@@ -4,7 +4,7 @@
 --***********
 
 if GetLocale() ~= "zhCN" then return end 
-
+local media = LibStub("LibSharedMedia-3.0");
 -- Static Messages
 SCT.LOCALS.LowHP= "血量过低！";					-- Message to be displayed when HP is low
 SCT.LOCALS.LowMana= "法力过低！";					-- Message to be displayed when Mana is Low
@@ -55,12 +55,13 @@ SCT.LOCALS.DISPLAY_USEAGE = SCT.LOCALS.DISPLAY_USEAGE .. "一些常用颜色值�
 
 --Fonts
 SCT.LOCALS.FONTS = { 
-	[1] = { name="数字", path="Fonts\\ZYKAI.TTF"},
-	[2] = { name="任务", path="Fonts\\ZYKAI_C.TTF"},
-	[3] = { name="物品", path="Fonts\\ZYKAI_T.TTF"},
-	[4] = { name="提示", path="Fonts\\ZYHEI.TTF"},
-	[5] = { name="信息", path="Fonts\\ZYHEI.TTF"},
-	[6] = { name="暗黑破坏神", path="Interface\\Addons\\sct\\fonts\\Avqest.ttf"},
+	[1] = { name="数字", path="Fonts\\ZYKAI.TTF", locale=media.LOCALE_BIT_zhCN},
+	[2] = { name="任务", path="Fonts\\ZYKAI_C.TTF", locale=media.LOCALE_BIT_zhCN},
+	[3] = { name="物品", path="Fonts\\ZYKAI_T.TTF", locale=media.LOCALE_BIT_zhCN},
+	[4] = { name="提示", path="Fonts\\ZYHEI.TTF", locale=media.LOCALE_BIT_zhCN},
+	[5] = { name="信息", path="Fonts\\ZYHEI.TTF", locale=media.LOCALE_BIT_zhCN},
+	[6] = { name="暗黑破坏神", path="Interface\\Addons\\sct\\fonts\\Avqest.ttf", locale=media.LOCALE_BIT_zhCN},
+	[7] = { name="微软雅黑", path="Interface\\AddOns\\QuLight\\Root\\Media\\msyf.ttf", locale=media.LOCALE_BIT_zhCN},
 }
 
 -- Cosmos button
