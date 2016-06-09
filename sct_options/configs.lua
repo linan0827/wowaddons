@@ -258,3 +258,61 @@ function SCT:GetGrayhoofConfigNoSCTD()
   };
 	return default;
 end
+
+function SCT:GetLSCConfig()
+  if (not SCT.FRAME3) then return SCT:GetGrayhoofConfigNoSCTD() end;
+	local default = {
+		["SHOWCOMBAT"] = 1,
+		["SPELLCOLOR"] = 1,
+		[SCT.FRAMES_DATA_TABLE] = {
+		  [SCT.FRAME1] = {
+				["GAPDIST"] = 100,
+				["ANITYPE"] = 7,
+				["ANISIDETYPE"] = 2,
+				["FONT"] = "聊天",
+				["ALIGN"] = 4,
+				["ICONSIDE"] = 4,
+				["DIRECTION"] = 1,
+				["TEXTSIZE"] = 32,
+			},
+			[SCT.FRAME2] = {
+				["GAPDIST"] = 200,
+				["ANITYPE"] = 7,
+				["ICONSIDE"] = 4,
+				["FONT"] = "聊天",
+				["ALIGN"] = 4,
+				["YOFFSET"] = 0,
+				["ANISIDETYPE"] = 2,
+				["TEXTSIZE"] = 32,
+			},
+			[SCT.FRAME3] = {
+				["GAPDIST"] = 40,
+				["ANITYPE"] = 1,
+				["ALPHA"] = 100,
+				["ICONSIDE"] = 2,
+				["DIRECTION"] = false,
+				["FADE"] = 1.5,
+				["ANISIDETYPE"] = 1,
+				["FONTSHADOW"] = 2,
+				["TEXTSIZE"] = 32,
+				["FONT"] = "暗黑破坏神",
+				["ALIGN"] = 2,
+				["YOFFSET"] = 210,
+				["XOFFSET"] = 0,
+			}, -- [3]
+			[SCT.MSG] = {
+				["MSGFONT"] = "聊天",
+			},
+		},
+	  ["FRAMES"] = {
+			["SHOWHEAL"] = SCT.FRAME1,
+			["SHOWHONOR"] = SCT.FRAME2,
+			["SHOWDEBUFF"] = SCT.FRAME2,
+			["SHOWREP"] = SCT.FRAME2,
+			["SHOWSELFHEAL"] = SCT.FRAME1,
+			["SHOWKILLBLOW"] = SCT.FRAME1,
+			["SHOWBUFF"] = SCT.FRAME2,
+		},
+  };
+	return default;
+end

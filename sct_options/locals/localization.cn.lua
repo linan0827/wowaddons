@@ -109,6 +109,7 @@ SCT.LOCALS.OPTION_MISC25 = {name="Grayhoof设定档", tooltipText = "载入Grayh
 SCT.LOCALS.OPTION_MISC26 = {name="内建设定档", tooltipText = ""};
 SCT.LOCALS.OPTION_MISC27 = {name="分割的SCTD设定档", tooltipText = "载入分割SCTD配置。如果有安装SCTD，会使得收到的事件在右侧，输出的事件在左侧，其它的事件在上方。"};
 SCT.LOCALS.OPTION_MISC28 = {name="测试", tooltipText = "在每个框架中生成测试事件。"};
+SCT.LOCALS.OPTION_MISC99 = {name="龙首存设定档", tooltipText = "As Your Wish."}
 
 --Animation Types
 SCT.LOCALS.OPTION_SELECTION1 = { name="动画类型", tooltipText = "选择动态文字动画类型", table = {[1] = "垂直(预设)",[2] = "彩虹",[3] = "水平",[4] = "斜下", [5] = "斜上", [6] = "飘洒", [7] = "HUD曲线", [8] = "HUD斜向"}};

@@ -1830,6 +1830,18 @@
 							</OnClick>
 						</Scripts>
 					</Button>
+
+					<!-- My Own Config-->
+					<Button name="SCTOptionsFrame_Misc99" inherits="SCTProfileButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="SCTOptionsFrame_Misc25" relativePoint="BOTTOM"/>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								SCT:CopyProfile(SCT:GetLSCConfig());
+							</OnClick>
+						</Scripts>
+					</Button>
 				</Frames>
 			</Frame>
 

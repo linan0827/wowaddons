@@ -153,6 +153,7 @@ SCT.OPTIONS.FrameMisc [SCT.LOCALS.OPTION_MISC32.name] = {index = 32, tooltipText
 SCT.OPTIONS.FrameMisc [SCT.LOCALS.OPTION_MISC33.name] = {index = 33, tooltipText = SCT.LOCALS.OPTION_MISC33.tooltipText}
 SCT.OPTIONS.FrameMisc [SCT.LOCALS.OPTION_MISC34.name] = {index = 34, tooltipText = SCT.LOCALS.OPTION_MISC34.tooltipText}
 SCT.OPTIONS.FrameMisc [SCT.LOCALS.OPTION_MISC35.name] = {index = 35, tooltipText = SCT.LOCALS.OPTION_MISC35.tooltipText}
+SCT.OPTIONS.FrameMisc [SCT.LOCALS.OPTION_MISC99.name] = {index = 99, tooltipText = SCT.LOCALS.OPTION_MISC99.tooltipText}
 
 --EditBoxes
 SCT.OPTIONS.EditBoxes = {};
