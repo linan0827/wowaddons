@@ -7,18 +7,20 @@
 ## Notes-frFR: Un damage meter.
 ## Notes-zhCN: 模块化伤害统计。
 ## Author: Zarnivoop
-## Version: 1.4-32
+## Version: r625
 ## SavedVariables: SkadaDB
 ## SavedVariablesPerCharacter: SkadaPerCharDB
-## X-Curse-Packaged-Version: 1.4-32
+## X-Curse-Packaged-Version: r625
 ## X-Curse-Project-Name: Skada Damage Meter
 ## X-Curse-Project-ID: skada
 ## X-Curse-Repository-ID: wow/skada/mainline
 
-## Dependencies: Libs, Ace3
+## Dependencies: Ace3, Libs
 
 ## X-License: MIT/X
 ## X-Category: Combat
+
+embeds.xml
 
 locale\enUS.lua
 locale\ruRU.lua
