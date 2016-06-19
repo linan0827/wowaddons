@@ -5,7 +5,7 @@
 ## Version: v35
 ## X-Category: Inventory
 ## LoadOnDemand: 0
-## OptionalDeps: Ace3, LibDBIcon-1.0, tekDebug
+## Dependencies: Ace3, Libs
 ## SavedVariables: BankStackDB
 ## X-Curse-Packaged-Version: v35
 ## X-Curse-Project-Name: BankStack
@@ -18,24 +18,6 @@
 # ## X-LoadOn-Events: BANKFRAME_OPENED, GUILDBANKFRAME_OPENED
 # ## X-LoadOn-BANKFRAME_OPENED: AddonLoader:LoadAddOn("BankStack"); BankStack.bank_open = true
 # ## X-LoadOn-GUILDBANKFRAME_OPENED: AddonLoader:LoadAddOn("BankStack"); BankStack.guild_bank_open = true
-
-#@no-lib-strip@
-lib\LibStub\LibStub.lua
-lib\CallbackHandler-1.0\CallbackHandler-1.0.xml
-#@end-no-lib-strip@
-
-lib\LibDataBroker-1.1\LibDataBroker-1.1.lua
-
-#@no-lib-strip@
-lib\AceAddon-3.0\AceAddon-3.0.xml
-lib\AceEvent-3.0\AceEvent-3.0.xml
-lib\AceDB-3.0\AceDB-3.0.xml
-lib\AceDBOptions-3.0\AceDBOptions-3.0.xml
-lib\AceGUI-3.0\AceGUI-3.0.xml
-lib\AceConfig-3.0\AceConfig-3.0.xml
-lib\AceLocale-3.0\AceLocale-3.0.xml
-lib\LibDBIcon-1.0\LibDBIcon-1.0.lua
-#@end-no-lib-strip@
 
 local.enUS.lua
 local.deDE.lua

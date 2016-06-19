@@ -8,13 +8,11 @@
 ## X-Category: Combat
 ## X-RelSite-WoWI: 3965
 ## X-Embeds: Ace3, LibSharedMedia-3.0
-## OptionalDeps: Ace3, LibSharedMedia-3.0
+## Dependencies: Ace3, Libs
 ## X-Curse-Packaged-Version: v6.72
 ## X-Curse-Project-Name: ScrollingCombatText
 ## X-Curse-Project-ID: scrolling-combat-text
 ## X-Curse-Repository-ID: wow/scrolling-combat-text/mainline
-
-embeds.xml
 
 sct.xml
 sct.lua
