@@ -81,14 +81,11 @@ local OnLeave = function()
 end
 
 local createAuraIcon = function(icons, index)
-	icons.createdIcons = icons.createdIcons + 1
-
 	local button = CreateFrame("Button", nil, icons)
 	button:RegisterForClicks'RightButtonUp'
 
 	local cd = CreateFrame("Cooldown", nil, button, "CooldownFrameTemplate")
 	cd:SetAllPoints(button)
-	cd:SetDrawEdge(false)
 
 	local icon = button:CreateTexture(nil, "BORDER")
 	icon:SetAllPoints(button)
@@ -114,7 +111,6 @@ local createAuraIcon = function(icons, index)
 	button:SetScript("OnEnter", OnEnter)
 	button:SetScript("OnLeave", OnLeave)
 
-	table.insert(icons, button)
 
 	button.icon = icon
 	button.count = count
@@ -157,7 +153,14 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 
 			 A button used to represent aura icons.
 			]]
+			local prev = icons.createdIcons
 			icon = (icons.CreateIcon or createAuraIcon) (icons, n)
+
+			-- XXX: Update the counters if the layout doesn't.
+			if(prev == icons.createdIcons) then
+				table.insert(icons, icon)
+				icons.createdIcons = icons.createdIcons + 1
+			end
 		end
 
 		local isPlayer
@@ -324,14 +327,22 @@ local UpdateAuras = function(self, event, unit)
 		local max = numBuffs + numDebuffs
 
 		local visibleBuffs, hiddenBuffs = filterIcons(unit, auras, auras.buffFilter or auras.filter or 'HELPFUL', numBuffs, nil, 0, true)
-		auras.visibleBuffs = visibleBuffs
 
 		local hasGap
 		if(visibleBuffs ~= 0 and auras.gap) then
 			hasGap = true
 			visibleBuffs = visibleBuffs + 1
 
-			local icon = auras[visibleBuffs] or (auras.CreateIcon or createAuraIcon) (auras, visibleBuffs)
+			local icon = auras[visibleBuffs]
+			if(not icon) then
+				local prev = auras.createdIcons
+				icon = (auras.CreateIcon or createAuraIcon) (auras, visibleBuffs)
+				-- XXX: Update the counters if the layout doesn't.
+				if(prev == auras.createdIcons) then
+					table.insert(auras, icon)
+					auras.createdIcons = auras.createdIcons + 1
+				end
+			end
 
 			-- Prevent the icon from displaying anything.
 			if(icon.cd) then icon.cd:Hide() end
@@ -367,6 +378,7 @@ local UpdateAuras = function(self, event, unit)
 			visibleBuffs = visibleBuffs - 1
 		end
 
+		auras.visibleBuffs = visibleBuffs
 		auras.visibleAuras = auras.visibleBuffs + auras.visibleDebuffs
 
 		local fromRange, toRange
@@ -435,23 +447,23 @@ local Update = function(self, event, unit)
 	if(event == 'ForceUpdate' or not event) then
 		local buffs = self.Buffs
 		if(buffs) then
-			(buffs.SetPosition or SetPosition) (buffs, 0, buffs.createdIcons)
+			(buffs.SetPosition or SetPosition) (buffs, 1, buffs.createdIcons)
 		end
 
 		local debuffs = self.Debuffs
 		if(debuffs) then
-			(debuffs.SetPosition or SetPosition) (debuffs, 0, debuffs.createdIcons)
+			(debuffs.SetPosition or SetPosition) (debuffs, 1, debuffs.createdIcons)
 		end
 
 		local auras = self.Auras
 		if(auras) then
-			(auras.SetPosition or SetPosition) (auras, 0, auras.createdIcons)
+			(auras.SetPosition or SetPosition) (auras, 1, auras.createdIcons)
 		end
 	end
 end
 
 local ForceUpdate = function(element)
-	return UpdateAuras(element.__owner, 'ForceUpdate', element.__owner.unit)
+	return Update(element.__owner, 'ForceUpdate', element.__owner.unit)
 end
 
 local Enable = function(self)

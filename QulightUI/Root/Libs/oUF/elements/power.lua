@@ -67,12 +67,12 @@
    Power:SetPoint('BOTTOM')
    Power:SetPoint('LEFT')
    Power:SetPoint('RIGHT')
-
+   
    -- Add a background
    local Background = Power:CreateTexture(nil, 'BACKGROUND')
    Background:SetAllPoints(Power)
    Background:SetTexture(1, 1, 1, .5)
-
+   
    -- Options
    Power.frequentUpdates = true
    Power.colorTapping = true
@@ -80,10 +80,10 @@
    Power.colorPower = true
    Power.colorClass = true
    Power.colorReaction = true
-
+   
    -- Make the background darker.
    Background.multiplier = .5
-
+   
    -- Register it with oUF
    self.Power = Power
    self.Power.bg = Background
@@ -154,8 +154,7 @@ local GetDisplayPower = function(unit)
 end
 
 local Update = function(self, event, unit)
-	local arenaPrep = event == 'ArenaPreparation'
-	if(self.unit ~= unit and not arenaPrep) then return end
+	if(self.unit ~= unit) then return end
 	local power = self.Power
 
 	if(power.PreUpdate) then power:PreUpdate(unit) end
@@ -164,14 +163,7 @@ local Update = function(self, event, unit)
 	if power.displayAltPower then
 		displayType, min = GetDisplayPower(unit)
 	end
-
-	local cur, max
-	if(arenaPrep) then
-		cur, max = 1, 1
-	else
-		cur, max = UnitPower(unit, displayType), UnitPowerMax(unit, displayType)
-	end
-
+	local cur, max = UnitPower(unit, displayType), UnitPowerMax(unit, displayType)
 	local disconnected = not UnitIsConnected(unit)
 	power:SetMinMaxValues(min or 0, max)
 
@@ -184,10 +176,7 @@ local Update = function(self, event, unit)
 	power.disconnected = disconnected
 
 	local r, g, b, t
-	if(power.colorClass and arenaPrep) then
-		local _, _, _, _, _, _, class = GetSpecializationInfoByID(GetArenaOpponentSpec(self.id))
-		t = self.colors.class[class]
-	elseif(power.colorTapping and not UnitPlayerControlled(unit) and
+	if(power.colorTapping and not UnitPlayerControlled(unit) and
 		(isBetaClient and UnitIsTapDenied(unit) or not isBetaClient and UnitIsTapped(unit) and
 		not UnitIsTappedByPlayer(unit) and not UnitIsTappedByAllThreatList(unit))) then
 		t = self.colors.tapped
