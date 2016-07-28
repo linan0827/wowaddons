@@ -32,8 +32,6 @@ StaticPopupDialogs.CANNOT_BUY_BANK_SLOT = {
 	preferredIndex = 5,
 }
 
-InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
-
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -121,11 +119,6 @@ function Stuffing:SlotUpdate(b)
 
 	if not b.frame.lock then
 		b.frame:SetBackdropBorderColor(.15,.15,.15,0)
-	end
-
-	if b.Cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
-		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
-		CooldownFrame_SetTimer(b.Cooldown, start, duration, enable)
 	end
 
 	if clink then

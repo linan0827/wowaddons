@@ -1,16 +1,7 @@
-function UIScale()
-	if Qulight["general"].AutoScale == true then
-	Qulight["general"].UiScale = min(2, max(.64, 768/string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
-	end
-end
-UIScale()
-
-local mult = 768/string.match(GetCVar("gxResolution"), "%d+x(%d+)")/Qulight["general"].UiScale
+local mult = 768/string.match(getscreenresolution, "%d+x(%d+)")/Qulight["general"].UiScale
 local function scale(x)
     return mult*math.floor(x/mult+.5)
 end
-function Scale(x) return scale(x) end
-mult = mult
 
 frames = {}
 

@@ -1,10 +1,10 @@
 ﻿Qulight["media"] = {
-	["font"] = [=[Interface\Addons\QulightUI\Root\Media\msyh.ttf]=], 			        -- main font in Qulight UI
-	["pxfont"] = [=[Interface\Addons\QulightUI\Root\Media\msyh.ttf]=],
-	["fontsize"] = 10, 														    		-- size of font 
+	["font"] = [=[Fonts\ARHei.ttf]=], 			        -- main font in Qulight UI
+	["pxfont"] = [=[Interface\Addons\QulightUI\Root\Media\pxFont.ttf]=],
+	["fontsize"] = 12, 														    		-- size of font 
 	["texture"] = "Interface\\AddOns\\QulightUI\\Root\\Media\\statusbar4",				-- main texture in Qulight UI
 	["blank"] = "Interface\\Buttons\\WHITE8x8",											-- clean texture
-	["glow"] = "Interface\\AddOns\\QulightUI\\Root\\Media\\glowTex",
+	["glow"] = "Interface\\AddOns\\QulightUI\\Root\\Media\\glowTex",	
 }
 Qulight["general"] = {
 	["AutoScale"] = true,  																-- mainly enabled for users that don't want to mess with the config file
@@ -27,7 +27,7 @@ Qulight["actionbar"] = {
 	["petbuttonsize"] = 32,                             -- pet & stance buttons size
 	["buttonspacing"] = 1,                              -- buttons spacing
 	["petbuttonspacing"] = 1,
-	["mainbarWidth"] = 12,		
+	["mainbarWidth"] = 10,		
 	["ownshdbar"] = false,                              -- use a complete new stance bar for shadow dance (rogue only)
 }
 
@@ -36,10 +36,10 @@ Qulight["raidframes"] = {
 	["deficit_health"] = true,					-- Raid deficit health
 	["vertical_health"] = false,				-- Vertical orientation of health
 	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
-	["power"] = false,					-- Alpha of healthbars when 100%hp
+	["power"] = true,					-- Alpha of healthbars when 100%hp
 	["show_range"] = true,						-- Show range opacity for raidframes
 	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
-	["hp_value"] = true,						
+	["hp_value"] = false,						
 	["width"] = 81.5,						
 	["height"] = 24,						
 
@@ -99,28 +99,31 @@ Qulight["unitframes"] = {
 }
 Qulight["chatt"] = {				 
 	["enable"] = true,																	-- enable/disable chat
+	["combatlog"] = true,
+	["fontsize"] = 10,
 	["chatbar"] = false,																-- enable/disable chatbar
+	["sticky"] = true,																
 }
 Qulight["buffdebuff"] = {
 	["enable"] = true,  
-	["iconsize"] = 24, 																	-- buffs size
+	["iconsize"] = 35, 																	-- buffs size
 	["timefontsize"] = 10, 																-- time font size
 	["countfontsize"] = 10,  															-- count font size
-	["spacing"] = 1, 																	-- spacing between icons(buffs)
+	["spacing"] = 3, 																	-- spacing between icons(buffs)
 	["timeYoffset"] = -2, 																-- verticall offset value for time text field
 	["BUFFS_PER_ROW"] = 5,
 }
 Qulight["addonskins"] = {
 	["DBM"] = true, 																	-- Deadly Boss Mod skinning
-	["PallyPower"] = true, 																-- Pally Power skinning
+	["PallyPower"] = false, 																-- Pally Power skinning
 	["Skada"] = true, 																	-- Skada skinning
-	["Recount"] = true, 																-- Recount skinning
-	["Omen"] = true, 																	-- Omen skinning
-	["KLE"] = true, 																	-- KLE skinning
-	["Quartz"] = true, 																	-- Quartz skinning
-	["Bigwigs"] = true, 																-- BigWigs Bossmod skinning
-	["DXE"] = true,
-	["CoolLine"] = true,
+	["Recount"] = false, 																-- Recount skinning
+	["Omen"] = false, 																	-- Omen skinning
+	["KLE"] = false, 																	-- KLE skinning
+	["Quartz"] = false, 																	-- Quartz skinning
+	["Bigwigs"] = false, 																-- BigWigs Bossmod skinning
+	["DXE"] = false,
+	["CoolLine"] = false,
 }
 Qulight["datatext"] = {
 	["Durability"] = 2,                													-- show your equipment durability on panels.
@@ -170,14 +173,24 @@ Qulight["tooltip"] = {
 	["hidecombat"] = false,               												-- hide bottom-right tooltip when in combat
 	["hidebuttons"] = false,                											-- always hide action bar buttons tooltip.
 	["hideuf"] = false,                     											-- hide tooltip on unitframes
+	["shift_modifer"] = false,
+	["health_value"] = false,
+	["realm"] = true,
+	["arena_experience"] = false,
+	["target"] = true,		
+	["raid_icon"] = true,						-- Raid icon
+	["who_targetting"] = true,					-- Show who is targetting the unit(in raid or party)
+	["rank"] = true,	
 	["cursor"] = false,                     											-- tooltip via cursor only
 	["itemlevel"] = true,																-- show item level
 	["spellid"] = true,
-	["title"] = false,	-- show speel id
+	["title"] = true,	-- show speel id
+	["unit_role"] = true,	-- show speel id
 }
 Qulight["bags"] = {
 	["Enable"] = true,																	-- enable/disable bags 
 	["buttonsize"] = 32,																	-- Buttons size
+	["ilvl"] = true,																	-- enable/disable bags 
 	["buttonspace"] = 3,																	-- Buttons space
 	["bankcolumns"] = 17,																	-- Horizontal number of columns in bank
 	["BagBars"] = true,																	-- enable/disable bags bar
@@ -190,12 +203,11 @@ Qulight["cooldown"] = {
 	["enable"] = true,                     												-- enable/disable cooldown addon(for buttons)
 }
 Qulight["misk"] = {
-	["addonmanager"] = true,														-- enable disable addonmanager	
 	["armory_link"] = false,															-- enable armory_link
-	["filger"] = true,																	-- enable disable filger
-	["classtimer"] = true,																-- enable disable classtimer
-	["BuffReminderRaidBuffs"] = true,													-- enable disable raid buffs reminder
-	["Reminder"] = true,																-- enable disable reminder(self buff)
+	["filger"] = false,																	-- enable disable filger
+	["classtimer"] = false,																-- enable disable classtimer
+	["BuffReminderRaidBuffs"] = false,													-- enable disable raid buffs reminder
+	["Reminder"] = false,																-- enable disable reminder(self buff)
 	["CooldownFlash"] = true,															-- enable disable cooldown flash
 	["raidcooldowns"] = false, 
 	["AutoScreen"] = true,
